@@ -7,110 +7,66 @@ if(e&&1===a.nodeType)while(c=e[d++])a.removeAttribute(c)}}),hb={set:function(a,b
 $(document).ready(function() {
 
   console.log('document is ready');
-  // var budget = {}; // creates the budget object
-  // budget.('.calc-tab label') = []; // makes a new array of values for every new calc-tab div
 
-  // $('#calculator .total button').on('click', function() {
-  //   console.log('clicked .total button');
-  //
-  //   var value = Number($('table input').val());
-  //   var frequency = Number($('.value-frequency option:selected').val());
-  //   console.log(value, frequency);
-  //   var annual = value * frequency;
-  //   $('#calculator .calc-total span').text(annual);
-  //
-  // });
-
-  // var total = {};
-
-  var salary = [];
-  var bonus = [];
-  var investments = [];
-  var other = [];
-
-  $('.tab-content #salary').find('input, select').on('keyup change', function() {
-    // make the totals add up across unique tr
-    var ammount = Number($('#salary .field-text input').val());
-    var frequency = Number($('#salary .field-select option:selected').val());
-    var annual = (ammount * frequency);
-    $('#salary p:eq(1)').text('$' + annual);
-    salary.push(annual);
-    console.log(salary[1]);
-  });
-
-  $('.tab-content #bonus').find('input, select').on('keyup change', function() {
-    var ammount = Number($('#bonus .field-text input').val());
-    var frequency = Number($('#bonus .field-select option:selected').val());
-    var annual = ammount * frequency;
-    $('#bonus p:eq(1)').text('$' + annual);
-    bonus.push(annual);
-    console.log(bonus[1]);
-  });
-
-  $('.tab-content #investments').find('input, select').on('keyup change', function() {
-    var ammount = Number($('#investments .field-text input').val());
-    var frequency = Number($('#investments .field-select option:selected').val());
-    var annual = ammount * frequency;
-    $('#investments p:eq(1)').text('$' + annual);
-    investments.push(annual);
-    console.log(investments[1]);
-  });
-
-  $('.tab-content #other').find('input, select').on('keyup change', function() {
-    var ammount = Number($('#other .field-text input').val());
-    var frequency = Number($('#other .field-select option:selected').val());
-    var annual = ammount * frequency;
-    $('#other p:eq(1)').text('$' + annual);
-    other.push(annual);
-    console.log(other[1]);
-  });
-
-  $('#calculator nav li').on('click', function() {
+  $('#calculator ul li').on('click', function() {
     var id = $(this).attr('id');
-    console.log('clicked ' + id + ' tab');
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
-    // Shorter could be: $(this).addClass('active').siblings('li').removeClass('active');
-    $('#calculator .tab-content li#' + id).addClass('active').siblings('li').removeClass('active');
   });
 
-  // $('#lesson .sum button').on('click', function() {
-  //   console.log('clicked .sum button');
-  //   $('#lesson button').addClass('blue');
-  //
-  //   var price = Number($('input.price').val());
-  //   var units = Number($('input.units').val());
-  //   console.log(price, units);
-  //   var total = price + units;
-  //   console.log(total);
-  //   $('.sum p span').text(total);
-  //
-  // });
-  //
-  // $('#lesson .multiply button').on('click', function() {
-  //   console.log('clicked .multiply button');
-  //   $('#lesson button').addClass('green').removeClass('red blue');
-  //
-  //   var price = Number($('input.price').val());
-  //   var units = Number($('input.units').val());
-  //   console.log(price, units);
-  //   var total = price * units;
-  //   console.log(total);
-  //   $('.multiply p span').text(total);
-  //
-  // });
-  //
-  // $('#lesson .divide button').on('click', function() {
-  //   console.log('clicked .divide button');
-  //   $('#lesson button').addClass('red').removeClass('blue green');
-  //
-  //   var price = Number($('input.price').val());
-  //   var units = Number($('input.units').val());
-  //   console.log(price, units);
-  //   var total = price / units;
-  //   console.log(total);
-  //   $('.divide p span').text(total);
-  //
-  // });
-  //
+  $('#calculator button').on('click', function() {
+    console.log(total);
+    console.log(income);
+    console.log('length is ' + incomeLength);
+    console.log('first value is ' + incomeFirst);
+
+  });
+
+  var income = [];
+  var bonus = [];
+  var investments = [];
+  var allowances = [];
+  var other = [];
+
+  var incomeLength = income.length;
+  var incomeFirst = income[0];
+
+  var total = [income, bonus, investments, allowances, other];
+
+  $('#calculator table .income').find('input, select').on('keyup change', function() {
+    var amount = Number($('.income .field-input input').val());
+    var frequency = Number($('.income .field-select option:selected').val());
+    var annual = (amount * frequency);
+    income.push(annual);
+    console.log(income);
+  });
+
+  $('#calculator table .bonus').find('input, select').on('keyup change', function() {
+    var amount = Number($('.bonus .field-input input').val());
+    var frequency = Number($('.bonus .field-select option:selected').val());
+    var annual = (amount * frequency);
+    bonus.push(annual);
+  });
+
+  $('#calculator table .investments').find('input, select').on('keyup change', function() {
+    var amount = Number($('.investments .field-input input').val());
+    var frequency = Number($('.investments .field-select option:selected').val());
+    var annual = (amount * frequency);
+    investments.push(annual);
+  });
+
+  $('#calculator table .allowances').find('input, select').on('keyup change', function() {
+    var amount = Number($('.allowances .field-input input').val());
+    var frequency = Number($('.allowances .field-select option:selected').val());
+    var annual = (amount * frequency);
+    allowances.push(annual);
+  });
+
+  $('#calculator table .other').find('input, select').on('keyup change', function() {
+    var amount = Number($('.other .field-input input').val());
+    var frequency = Number($('.other .field-select option:selected').val());
+    var annual = (amount * frequency);
+    other.push(annual);
+  });
+
 });

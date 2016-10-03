@@ -61,7 +61,76 @@ footer div p {
 
 /* Specific to one page */
 #landing section #calculator {
-  background: #999;
+  border: #6cc8c6 solid 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#landing section #calculator div h2 {
+  background: white;
+  text-transform: uppercase;
+  font-weight: 200;
+  text-align: center;
+  padding: 30px 0 10px;
+}
+#landing section #calculator div ul {
+  padding: 0;
+  background: #6cc8c6;
+}
+#landing section #calculator div ul li {
+  list-style: none;
+}
+#landing section #calculator div ul li h3 {
+  color: white;
+  background: #6cc8c6;
+  margin: 0;
+  padding: 12px 30px;
+  font-weight: 200;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+#landing section #calculator div ul li table {
+  display: none;
+  background: white;
+}
+#landing section #calculator div ul li table td {
+  padding: 12px 10px;
+}
+#landing section #calculator div ul li table td label {
+  font-size: 14px;
+  font-weight: 200;
+}
+#landing section #calculator div ul li table td input {
+  height: 30px;
+  width: 105px;
+  border: none;
+  background: #EFEFEF;
+}
+#landing section #calculator div ul li table td select {
+  background: #EFEFEF;
+  height: 30px;
+  width: 105px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+#landing section #calculator div ul li table .label label {
+  font-size: 14;
+  text-transform: uppercase;
+}
+#landing section #calculator div ul li.active table {
+  display: block;
+}
+#landing section #calculator div button {
+  display: block;
+  background: #6cc8c6;
+  margin: 20px auto;
+  border: 1px #6cc8c6 solid;
+  font-size: 14px;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px 30px;
 }
 
 /* Outdate Browsers*/
