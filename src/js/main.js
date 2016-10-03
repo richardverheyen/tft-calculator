@@ -8,59 +8,131 @@ $(document).ready(function() {
     $(this).siblings().removeClass('active');
   });
 
-  $('#calculator button').on('click', function() {
-    console.log(total);
-    console.log(income);
-    console.log('length is ' + incomeLength);
-    console.log('first value is ' + incomeFirst);
+  var total = {};
 
-  });
-
-  var income = [];
-  var bonus = [];
-  var investments = [];
-  var allowances = [];
-  var other = [];
-
-  var incomeLength = income.length;
-  var incomeFirst = income[0];
-
-  var total = [income, bonus, investments, allowances, other];
-
-  $('#calculator table .income').find('input, select').on('keyup change', function() {
+  $('#calculator #income .income').find('input, select').on('keyup change', function() {
     var amount = Number($('.income .field-input input').val());
     var frequency = Number($('.income .field-select option:selected').val());
     var annual = (amount * frequency);
-    income.push(annual);
-    console.log(income);
+    total.income = annual;
+    console.log(total);
   });
 
-  $('#calculator table .bonus').find('input, select').on('keyup change', function() {
+  $('#calculator #income .bonus').find('input, select').on('keyup change', function() {
     var amount = Number($('.bonus .field-input input').val());
     var frequency = Number($('.bonus .field-select option:selected').val());
     var annual = (amount * frequency);
-    bonus.push(annual);
+    total.bonus = annual;
+    console.log(total);
   });
 
-  $('#calculator table .investments').find('input, select').on('keyup change', function() {
+  $('#calculator #income .investments').find('input, select').on('keyup change', function() {
     var amount = Number($('.investments .field-input input').val());
     var frequency = Number($('.investments .field-select option:selected').val());
     var annual = (amount * frequency);
-    investments.push(annual);
+    total.investments = annual;
   });
 
-  $('#calculator table .allowances').find('input, select').on('keyup change', function() {
+  $('#calculator #income .allowances').find('input, select').on('keyup change', function() {
     var amount = Number($('.allowances .field-input input').val());
     var frequency = Number($('.allowances .field-select option:selected').val());
     var annual = (amount * frequency);
-    allowances.push(annual);
+    total.allowances = annual;
+    console.log(total);
   });
 
-  $('#calculator table .other').find('input, select').on('keyup change', function() {
+  $('#calculator #income .other').find('input, select').on('keyup change', function() {
     var amount = Number($('.other .field-input input').val());
     var frequency = Number($('.other .field-select option:selected').val());
     var annual = (amount * frequency);
-    other.push(annual);
+    total.other = annual;
+    console.log(total);
+  });
+
+  //LIVING EXPENSES TAB//
+
+  $('#calculator #living-expenses .income').find('input, select').on('keyup change', function() {
+    var amount = Number($('.income .field-input input').val());
+    var frequency = Number($('.income .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.income = annual;
+    console.log(total);
+  });
+
+  $('#calculator #living-expenses .bonus').find('input, select').on('keyup change', function() {
+    var amount = Number($('.bonus .field-input input').val());
+    var frequency = Number($('.bonus .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.bonus = annual;
+    console.log(total);
+  });
+
+  $('#calculator #living-expenses .investments').find('input, select').on('keyup change', function() {
+    var amount = Number($('.investments .field-input input').val());
+    var frequency = Number($('.investments .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.investments = annual;
+  });
+
+  $('#calculator #living-expenses .allowances').find('input, select').on('keyup change', function() {
+    var amount = Number($('.allowances .field-input input').val());
+    var frequency = Number($('.allowances .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.allowances = annual;
+    console.log(total);
+  });
+
+  $('#calculator #living-expenses .other').find('input, select').on('keyup change', function() {
+    var amount = Number($('.other .field-input input').val());
+    var frequency = Number($('.other .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.other = annual;
+    console.log(total);
+  });
+
+  //INSURANCE AND SUPERANNUATION//
+
+  $('#calculator #insurance .income').find('input, select').on('keyup change', function() {
+    var amount = Number($('.income .field-input input').val());
+    var frequency = Number($('.income .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.income = annual;
+    console.log(total);
+  });
+
+  $('#calculator #insurance .bonus').find('input, select').on('keyup change', function() {
+    var amount = Number($('.bonus .field-input input').val());
+    var frequency = Number($('.bonus .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.bonus = annual;
+    console.log(total);
+  });
+
+  $('#calculator #insurance .investments').find('input, select').on('keyup change', function() {
+    var amount = Number($('.investments .field-input input').val());
+    var frequency = Number($('.investments .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.investments = annual;
+  });
+
+  $('#calculator #insurance .allowances').find('input, select').on('keyup change', function() {
+    var amount = Number($('.allowances .field-input input').val());
+    var frequency = Number($('.allowances .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.allowances = annual;
+    console.log(total);
+  });
+
+  $('#calculator #insurance .other').find('input, select').on('keyup change', function() {
+    var amount = Number($('.other .field-input input').val());
+    var frequency = Number($('.other .field-select option:selected').val());
+    var annual = (amount * frequency);
+    total.other = annual;
+    console.log(total);
+  });
+
+  $('#calculator button').on('click', function() {
+    console.log(total);
   });
 
 });

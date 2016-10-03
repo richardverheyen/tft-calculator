@@ -13,7 +13,7 @@
       <div>
 
         <div id="calculator">
-          <div>
+          <div id="inputs">
             <h2>Budget Planner</h2>
             <ul>
               <li id="income" class="active">
@@ -154,7 +154,7 @@
                 </table>
               </li>
 
-              <li>
+              <li id="living-expenses">
                 <h3>Living Expenses</h3>
                 <table>
                   <tr class="label">
@@ -293,7 +293,7 @@
 
               </li>
 
-              <li>
+              <li id="insurance">
                 <h3>Insurance &amp; Superannuation</h3>
                 <table>
                   <tr class="label">
@@ -847,6 +847,47 @@
             </ul>
             <button>calculate</button>
           </div>
+
+          <div id="results">
+            <div>
+              <h2>Your Budget Summary</h2>
+              <div class="bar-chart">
+                <div>
+                  <h3>Income</h3>
+                  <div class="bar"></div>
+                  <h4>$0</h4>
+                </div>
+                <div>
+                  <h3>Spending</h3>
+                  <div class="bar"></div>
+                  <h4>$0</h4>
+                </div>
+                <div>
+                  <h3>Net</h3>
+                  <div class="bar"></div>
+                  <h4>$0</h4>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2>Your Spending Summary</h2>
+              <div class="pie-chart">
+                <div>
+
+                </div>
+                <div>
+                  <p>[] Living Expenses</p>
+                  <p>[] Transport</p>
+                  <p>[] Insurance &amp; Super</p>
+                  <p>[] Leisure &amp; Entertainment</p>
+                  <p>[] Loans &amp; Credit Cards</p>
+                </div>
+              </div>
+            </div>
+            <button>Re-Calculate</button>
+          </div>
+
         </div>
 
       </div>
