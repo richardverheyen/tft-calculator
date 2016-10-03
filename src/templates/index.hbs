@@ -1,0 +1,676 @@
+{{#extend "layout"}}
+
+  {{#replace "meta"}}
+    <title>Richard's Calculator</title>
+    <meta name="description" content="one badass calculator">
+  {{/replace}}
+
+  {{#replace "body-id"}}landing{{/replace}}
+
+  {{#replace "main"}}
+
+    <section>
+      <div>
+
+        <div id="calculator">
+          <div>
+            <h2>Budget Planner</h2>
+            <ul>
+              <li id="income" class="active">
+                <h3>Income Details</h3>
+                <table>
+                  <tr>
+                    <td>
+                      <label>Title</label>
+                    </td>
+                    <td>
+                      <label>Amount</label>
+                    </td>
+                    <td>
+                      <label>Frequency</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Bonus</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Investment Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Allowances</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Other Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                </table>
+              </li>
+
+              <li>
+                <h3>Living Expenses</h3>
+                <table>
+                  <tr>
+                    <td>
+                      <label>Title</label>
+                    </td>
+                    <td>
+                      <label>Amount</label>
+                    </td>
+                    <td>
+                      <label>Frequency</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Bonus</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Investment Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Allowances</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Other Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                </table>
+
+              </li>
+
+              <li>
+                <h3>Insurance &amp; Superannuation</h3>
+                <table>
+                  <tr>
+                    <td>
+                      <label>Title</label>
+                    </td>
+                    <td>
+                      <label>Amount</label>
+                    </td>
+                    <td>
+                      <label>Frequency</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Bonus</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Investment Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Allowances</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Other Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                </table>
+              </li>
+
+              <li>
+                <h3>Loans &amp; Credit Cards</h3>
+                <table>
+                  <tr>
+                    <td>
+                      <label>Title</label>
+                    </td>
+                    <td>
+                      <label>Amount</label>
+                    </td>
+                    <td>
+                      <label>Frequency</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Bonus</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Investment Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Allowances</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Other Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                </table>
+              </li>
+
+              <li>
+                <h3>Transport</h3>
+                <table>
+                  <tr>
+                    <td>
+                      <label>Title</label>
+                    </td>
+                    <td>
+                      <label>Amount</label>
+                    </td>
+                    <td>
+                      <label>Frequency</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Bonus</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Investment Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Allowances</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Other Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                </table>
+              </li>
+
+              <li>
+                <h3>Leisure &amp; Entertainment</h3>
+                <table>
+                  <tr>
+                    <td>
+                      <label>Title</label>
+                    </td>
+                    <td>
+                      <label>Amount</label>
+                    </td>
+                    <td>
+                      <label>Frequency</label>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Bonus</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Investment Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Allowances</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label>Other Income</label>
+                    </td>
+                    <td>
+                      <input class="ammount" type="number">
+                    </td>
+                    <td>
+                      <select class="frequency">
+                        <option value="1">yearly</option>
+                        <option value="4">quarterly</option>
+                        <option value="12">monthly</option>
+                        <option value="26.09">fortnightly</option>
+                        <option value="52.18">weekly</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                </table>
+              </li>
+            </ul>
+            <button>calculate</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  {{/replace}}
+{{/extend}}

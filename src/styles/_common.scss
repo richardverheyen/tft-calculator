@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+header,
+section {
+  > div {
+    max-width: 1080px;
+    min-width: 320px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
