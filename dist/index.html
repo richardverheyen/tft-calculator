@@ -35,7 +35,7 @@
       <div>
 
         <div id="calculator">
-          <div id="inputs">
+          <div id="inputs" class="on">
             <h2>Budget Planner</h2>
             <ul>
               <li id="income" class="active">
@@ -149,6 +149,54 @@
                     </td>
                   </tr>
 
+                  <tr class="property">
+                    <td>
+                      <div class="field-title">
+                        <label>Investment Property</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="pension">
+                    <td>
+                      <div class="field-title">
+                        <label>Pension</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
                   <tr class="other">
                     <td>
                       <div class="field-title">
@@ -176,7 +224,7 @@
                 </table>
               </li>
 
-              <li id="living-expenses">
+              <li id="livingexpenses">
                 <h3>Living Expenses</h3>
                 <table>
                   <tr class="label">
@@ -191,10 +239,10 @@
                     </td>
                   </tr>
 
-                  <tr class="income">
+                  <tr class="rent">
                     <td>
                       <div class="field-title">
-                        <label>Income</label>
+                        <label>Rent</label>
                       </div>
                     </td>
                     <td>
@@ -215,10 +263,11 @@
                     </td>
                   </tr>
 
-                  <tr class="bonus">
+                  <tr class="rates">
                     <td>
                       <div class="field-title">
-                        <label>Bonuses</label>
+                        <label>Rates
+                          <br>(Council, Water)</label>
                       </div>
                     </td>
                     <td>
@@ -239,10 +288,11 @@
                     </td>
                   </tr>
 
-                  <tr class="investments">
+                  <tr class="utilities">
                     <td>
                       <div class="field-title">
-                        <label>Investment Income</label>
+                        <label>Utilities
+                          <br>(Gas, etc.)</label>
                       </div>
                     </td>
                     <td>
@@ -263,10 +313,10 @@
                     </td>
                   </tr>
 
-                  <tr class="allowances">
+                  <tr class="phone">
                     <td>
                       <div class="field-title">
-                        <label>Allowances</label>
+                        <label>Phone &amp; Internet</label>
                       </div>
                     </td>
                     <td>
@@ -287,10 +337,158 @@
                     </td>
                   </tr>
 
-                  <tr class="other">
+                  <tr class="home">
                     <td>
                       <div class="field-title">
-                        <label>Other Income</label>
+                        <label>Home
+                          <br>Maintenance</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="groceries">
+                    <td>
+                      <div class="field-title">
+                        <label>Groceries</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="medical">
+                    <td>
+                      <div class="field-title">
+                        <label>Medical &amp;
+                          <br>Pharmaceutical</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="clothes">
+                    <td>
+                      <div class="field-title">
+                        <label>Clothes &amp;
+                          <br>Shoes</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="education">
+                    <td>
+                      <div class="field-title">
+                        <label>Education
+                          <br>(fees, childcare)</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="other1">
+                    <td>
+                      <div class="field-title">
+                        <label>Other</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="other2">
+                    <td>
+                      <div class="field-title">
+                        <label>Other</label>
                       </div>
                     </td>
                     <td>
@@ -330,10 +528,10 @@
                     </td>
                   </tr>
 
-                  <tr class="income">
+                  <tr class="life">
                     <td>
                       <div class="field-title">
-                        <label>Income</label>
+                        <label>Life</label>
                       </div>
                     </td>
                     <td>
@@ -354,10 +552,11 @@
                     </td>
                   </tr>
 
-                  <tr class="bonus">
+                  <tr class="protection">
                     <td>
                       <div class="field-title">
-                        <label>Bonuses</label>
+                        <label>Income
+                          <br>Protection</label>
                       </div>
                     </td>
                     <td>
@@ -378,10 +577,11 @@
                     </td>
                   </tr>
 
-                  <tr class="investments">
+                  <tr class="home">
                     <td>
                       <div class="field-title">
-                        <label>Investment Income</label>
+                        <label>Home &amp;
+                          <br>Contents</label>
                       </div>
                     </td>
                     <td>
@@ -402,10 +602,10 @@
                     </td>
                   </tr>
 
-                  <tr class="allowances">
+                  <tr class="car">
                     <td>
                       <div class="field-title">
-                        <label>Allowances</label>
+                        <label>Car</label>
                       </div>
                     </td>
                     <td>
@@ -426,10 +626,35 @@
                     </td>
                   </tr>
 
-                  <tr class="other">
+                  <tr class="business">
                     <td>
                       <div class="field-title">
-                        <label>Other Income</label>
+                        <label>Business</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="boat">
+                    <td>
+                      <div class="field-title">
+                        <label>Other (Boat,
+                          <br>caravan, trailer)</label>
                       </div>
                     </td>
                     <td>
@@ -453,7 +678,7 @@
                 </table>
               </li>
 
-              <li>
+              <li id="loans">
                 <h3>Loans &amp; Credit Cards</h3>
                 <table>
                   <tr class="label">
@@ -468,10 +693,10 @@
                     </td>
                   </tr>
 
-                  <tr class="income">
+                  <tr class="mortgage">
                     <td>
                       <div class="field-title">
-                        <label>Income</label>
+                        <label>Mortgage</label>
                       </div>
                     </td>
                     <td>
@@ -492,10 +717,11 @@
                     </td>
                   </tr>
 
-                  <tr class="bonus">
+                  <tr class="personal-loan">
                     <td>
                       <div class="field-title">
-                        <label>Bonuses</label>
+                        <label>Personal loan
+                          <br>repayments</label>
                       </div>
                     </td>
                     <td>
@@ -516,10 +742,10 @@
                     </td>
                   </tr>
 
-                  <tr class="investments">
+                  <tr class="credit-card">
                     <td>
                       <div class="field-title">
-                        <label>Investment Income</label>
+                        <label>Credit Card</label>
                       </div>
                     </td>
                     <td>
@@ -540,34 +766,11 @@
                     </td>
                   </tr>
 
-                  <tr class="allowances">
+                  <tr class="other-loan">
                     <td>
                       <div class="field-title">
-                        <label>Allowances</label>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="field-input">
-                        <input class="ammount" type="value">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="field-select">
-                        <select class="frequency">
-                          <option value="1">yearly</option>
-                          <option value="4">quarterly</option>
-                          <option value="12">monthly</option>
-                          <option value="26.09">fortnightly</option>
-                          <option value="52.18">weekly</option>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr class="other">
-                    <td>
-                      <div class="field-title">
-                        <label>Other Income</label>
+                        <label>Other loan
+                          <br>repayments</label>
                       </div>
                     </td>
                     <td>
@@ -591,7 +794,7 @@
                 </table>
               </li>
 
-              <li>
+              <li id="transport">
                 <h3>Transport</h3>
                 <table>
                   <tr class="label">
@@ -606,10 +809,10 @@
                     </td>
                   </tr>
 
-                  <tr class="income">
+                  <tr class="vehicle">
                     <td>
                       <div class="field-title">
-                        <label>Income</label>
+                        <label>Vehicle</label>
                       </div>
                     </td>
                     <td>
@@ -630,10 +833,10 @@
                     </td>
                   </tr>
 
-                  <tr class="bonus">
+                  <tr class="maintenance">
                     <td>
                       <div class="field-title">
-                        <label>Bonuses</label>
+                        <label>Maintenance</label>
                       </div>
                     </td>
                     <td>
@@ -654,10 +857,10 @@
                     </td>
                   </tr>
 
-                  <tr class="investments">
+                  <tr class="petrol">
                     <td>
                       <div class="field-title">
-                        <label>Investment Income</label>
+                        <label>Petrol</label>
                       </div>
                     </td>
                     <td>
@@ -678,10 +881,10 @@
                     </td>
                   </tr>
 
-                  <tr class="allowances">
+                  <tr class="parking">
                     <td>
                       <div class="field-title">
-                        <label>Allowances</label>
+                        <label>Parking</label>
                       </div>
                     </td>
                     <td>
@@ -702,10 +905,35 @@
                     </td>
                   </tr>
 
-                  <tr class="other">
+                  <tr class="public">
                     <td>
                       <div class="field-title">
-                        <label>Other Income</label>
+                        <label>Public
+                          <br>Transport</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="other3">
+                    <td>
+                      <div class="field-title">
+                        <label>Other</label>
                       </div>
                     </td>
                     <td>
@@ -729,7 +957,7 @@
                 </table>
               </li>
 
-              <li>
+              <li id="leisure">
                 <h3>Leisure &amp; Entertainment</h3>
                 <table>
                   <tr class="label">
@@ -744,10 +972,10 @@
                     </td>
                   </tr>
 
-                  <tr class="income">
+                  <tr class="holidays">
                     <td>
                       <div class="field-title">
-                        <label>Income</label>
+                        <label>Holidays</label>
                       </div>
                     </td>
                     <td>
@@ -768,10 +996,11 @@
                     </td>
                   </tr>
 
-                  <tr class="bonus">
+                  <tr class="restaurants">
                     <td>
                       <div class="field-title">
-                        <label>Bonuses</label>
+                        <label>Restaurants
+                          <br>&amp; Takeaway</label>
                       </div>
                     </td>
                     <td>
@@ -792,10 +1021,11 @@
                     </td>
                   </tr>
 
-                  <tr class="investments">
+                  <tr class="sport">
                     <td>
                       <div class="field-title">
-                        <label>Investment Income</label>
+                        <label>Sport, hobbies
+                          <br>&amp; Memberships</label>
                       </div>
                     </td>
                     <td>
@@ -840,10 +1070,61 @@
                     </td>
                   </tr>
 
-                  <tr class="other">
+                  <tr class="magazines">
                     <td>
                       <div class="field-title">
-                        <label>Other Income</label>
+                        <label>Magazines,
+                          <br>papers and books</label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="gifts">
+                    <td>
+                      <div class="field-title">
+                        <label>Gifts (christmas
+                          <br> birthdays)
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-input">
+                        <input class="ammount" type="value">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="field-select">
+                        <select class="frequency">
+                          <option value="1">yearly</option>
+                          <option value="4">quarterly</option>
+                          <option value="12">monthly</option>
+                          <option value="26.09">fortnightly</option>
+                          <option value="52.18">weekly</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="other4">
+                    <td>
+                      <div class="field-title">
+                        <label>Other</label>
                       </div>
                     </td>
                     <td>
@@ -876,17 +1157,17 @@
               <div class="bar-chart">
                 <div>
                   <h3>Income</h3>
-                  <div class="bar"></div>
+                  <div class="incomeBar"></div>
                   <h4>$0</h4>
                 </div>
                 <div>
                   <h3>Spending</h3>
-                  <div class="bar"></div>
+                  <div class="spendingBar"></div>
                   <h4>$0</h4>
                 </div>
                 <div>
                   <h3>Net</h3>
-                  <div class="bar"></div>
+                  <div class="netBar"></div>
                   <h4>$0</h4>
                 </div>
               </div>

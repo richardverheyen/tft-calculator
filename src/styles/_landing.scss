@@ -1,7 +1,14 @@
 #landing {
   section {
     #calculator {
+      // div {
+      //   display: none;
+      // }
+      .on {
+        display: block;
+      }
       > div {
+        display: none;
         border: #6cc8c6 solid 10px;
         max-width: 400px;
         margin: 0 auto;
@@ -31,7 +38,7 @@
               display: none;
               background: white;
               td {
-                padding: 12px 10px;
+                padding: 5px 10px;
                 label {
                   font-size: 14px;
                   font-weight: 200;
@@ -68,7 +75,7 @@
         button {
           display: block;
           background: #6cc8c6;
-          margin: 30px auto 45px;
+          margin: 30px auto;
           border: 1px #6cc8c6 solid;
           font-size: 14px;
           font-weight: 200;
@@ -91,22 +98,21 @@
               h3 {
                 width: 100px;
               }
-              .bar {
+              div {
                 display: inline-block;
                 height: 50px;
-                width: 120px;
+                transition: all 400ms ease-out;
+              }
+              .incomeBar {
+                width: 0;
                 background: blue;
               }
-            }
-            div:nth-last-child(1) {
-              .bar {
-                width: 40px;
+              .spendingBar {
+                width: 0;
                 background: orange;
               }
-            }
-            div:nth-last-child(2) {
-              .bar {
-                width: 100px;
+              .netBar {
+                width: 0;
                 background: yellow;
               }
             }
@@ -131,7 +137,7 @@
         button {
           display: block;
           background: #6cc8c6;
-          margin: 30px auto 45px;
+          margin: 30px auto;
           border: 1px #6cc8c6 solid;
           font-size: 14px;
           font-weight: 200;

@@ -60,7 +60,11 @@ footer div p {
 }
 
 /* Specific to one page */
+#landing section #calculator .on {
+  display: block;
+}
 #landing section #calculator > div {
+  display: none;
   border: #6cc8c6 solid 10px;
   max-width: 400px;
   margin: 0 auto;
@@ -94,7 +98,7 @@ footer div p {
   background: white;
 }
 #landing section #calculator > div ul li table td {
-  padding: 12px 10px;
+  padding: 5px 10px;
 }
 #landing section #calculator > div ul li table td label {
   font-size: 14px;
@@ -124,7 +128,7 @@ footer div p {
 #landing section #calculator > div button {
   display: block;
   background: #6cc8c6;
-  margin: 30px auto 45px;
+  margin: 30px auto;
   border: 1px #6cc8c6 solid;
   font-size: 14px;
   font-weight: 200;
@@ -148,18 +152,21 @@ footer div p {
 #landing section #calculator #results div .bar-chart div h3 {
   width: 100px;
 }
-#landing section #calculator #results div .bar-chart div .bar {
+#landing section #calculator #results div .bar-chart div div {
   display: inline-block;
   height: 50px;
-  width: 120px;
+  transition: all 400ms ease-out;
+}
+#landing section #calculator #results div .bar-chart div .incomeBar {
+  width: 0;
   background: blue;
 }
-#landing section #calculator #results div .bar-chart div:nth-last-child(1) .bar {
-  width: 40px;
+#landing section #calculator #results div .bar-chart div .spendingBar {
+  width: 0;
   background: orange;
 }
-#landing section #calculator #results div .bar-chart div:nth-last-child(2) .bar {
-  width: 100px;
+#landing section #calculator #results div .bar-chart div .netBar {
+  width: 0;
   background: yellow;
 }
 #landing section #calculator #results div .pie-chart div {
@@ -181,7 +188,7 @@ footer div p {
 #landing section #calculator #results button {
   display: block;
   background: #6cc8c6;
-  margin: 30px auto 45px;
+  margin: 30px auto;
   border: 1px #6cc8c6 solid;
   font-size: 14px;
   font-weight: 200;
