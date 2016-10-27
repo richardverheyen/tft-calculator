@@ -16,8 +16,8 @@ $(document).ready(function() {
 
   var income = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     incomeTotal = 0,
-    livingexpenses = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    livingexpensesTotal = 0,
+    livingExpenses = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    livingExpensesTotal = 0,
     insurance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     insuranceTotal = 0,
     loans = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -33,31 +33,107 @@ $(document).ready(function() {
     $('#results').addClass('on');
     for (i = 0; i < income.length; i++) {
       incomeTotal = incomeTotal + income[i];
-    };
-    for (i = 0; i < livingexpenses.length; i++) {
-      livingexpensesTotal = livingexpensesTotal + livingexpenses[i];
-    };
+    }
+    for (i = 0; i < livingExpenses.length; i++) {
+      livingExpensesTotal = livingExpensesTotal + livingExpenses[i];
+    }
     for (i = 0; i < insurance.length; i++) {
       insuranceTotal = insuranceTotal + insurance[i];
-    };
+    }
     for (i = 0; i < loans.length; i++) {
       loansTotal = loansTotal + loans[i];
-    };
+    }
     for (i = 0; i < transport.length; i++) {
       transportTotal = transportTotal + transport[i];
-    };
+    }
     for (i = 0; i < leisure.length; i++) {
       leisureTotal = leisureTotal + leisure[i];
-    };
-    var spendingTotal = livingexpensesTotal + insuranceTotal + loansTotal + transportTotal + leisureTotal;
+    }
+
+    //generate the bar graph section of results
+    var spendingTotal = livingExpensesTotal + insuranceTotal + loansTotal + transportTotal + leisureTotal;
     var netTotal = incomeTotal - spendingTotal;
     $('.incomeBar').css('width', 170 + 'px');
     $('.spendingBar').css('width', (170 * spendingTotal / incomeTotal) + 'px');
     $('.netBar').css('width', (170 * netTotal / incomeTotal) + 'px');
 
+    //Add numerical values to the bar graphs
     $('.incomeBar').parent().find('h4').text('$' + incomeTotal);
     $('.spendingBar').parent().find('h4').text('$' + spendingTotal);
     $('.netBar').parent().find('h4').text('$' + netTotal);
+
+    ////Generate Pie chart graph
+    //set up variables, test for >180deg//
+    var livingExpensesSlice = 360 * livingExpensesTotal / spendingTotal,
+      livingExpensesSlicePosition = 0,
+      livingExpensesLabelPosition = livingExpensesSlice / 2;
+    if (livingExpensesSlice >= 180) {
+      $('#livingExpensesSlice').addClass('big');
+    };
+
+    var insuranceSlice = 360 * insuranceTotal / spendingTotal,
+      insuranceSlicePosition = livingExpensesSlice + livingExpensesSlicePosition,
+      insuranceLabelPosition = insuranceSlice / 2;
+    if (insuranceSlice >= 180) {
+      $('#insuranceSlice').addClass('big');
+    };
+
+    var loansSlice = 360 * loansTotal / spendingTotal,
+      loansSlicePosition = insuranceSlice + insuranceSlicePosition,
+      loansLabelPosition = loansSlice / 2;
+    if (loansSlice >= 180) {
+      $('#loansSlice').addClass('big');
+    };
+
+    var transportSlice = 360 * transportTotal / spendingTotal,
+      transportSlicePosition = loansSlice + loansSlicePosition,
+      transportLabelPosition = transportSlice / 2;
+    if (transportSlice >= 180) {
+      $('#transportSlice').addClass('big');
+    };
+
+    var leisureSlice = 360 * leisureTotal / spendingTotal,
+      leisureSlicePosition = transportSlice + transportSlicePosition,
+      leisureLabelPosition = leisureSlice / 2;
+    if (leisureSlice >= 180) {
+      $('#leisureSlice').addClass('big');
+    };
+
+    //insert slice pieces into chart
+    //.pie-slice to define their size
+    //labels are updated with 'Total' values
+    //label is centred in to the middle of the slice-label
+    //label h4 is rotated back to 0deg
+
+    $('#livingExpensesSlice').css('transform', 'rotate(' + livingExpensesSlicePosition + 'deg)');
+    $('#livingExpensesSlice .pie-slice').css('transform', 'rotate(' + livingExpensesSlice + 'deg)');
+    $('#livingExpensesSlice .slice-label').html('<h4>$' + livingExpensesTotal + '</h4>');
+    $('#livingExpensesSlice .slice-label').css('transform', 'rotate(' + livingExpensesLabelPosition + 'deg)');
+    $('#livingExpensesSlice h4').css('transform', 'rotate(-' + (livingExpensesLabelPosition + livingExpensesSlicePosition) + 'deg)');
+
+    $('#insuranceSlice').css('transform', 'rotate(' + insuranceSlicePosition + 'deg)');
+    $('#insuranceSlice .pie-slice').css('transform', 'rotate(' + insuranceSlice + 'deg)');
+    $('#insuranceSlice .slice-label').html('<h4>$' + insuranceTotal + '</h4>');
+    $('#insuranceSlice .slice-label').css('transform', 'rotate(' + insuranceLabelPosition + 'deg)');
+    $('#insuranceSlice h4').css('transform', 'rotate(-' + (insuranceLabelPosition + insuranceSlicePosition) + 'deg)');
+
+    $('#loansSlice').css('transform', 'rotate(' + loansSlicePosition + 'deg)');
+    $('#loansSlice .pie-slice').css('transform', 'rotate(' + loansSlice + 'deg)');
+    $('#loansSlice .slice-label').html('<h4>$' + loansTotal + '</h4>');
+    $('#loansSlice .slice-label').css('transform', 'rotate(' + loansLabelPosition + 'deg)');
+    $('#loansSlice h4').css('transform', 'rotate(-' + (loansLabelPosition + loansSlicePosition) + 'deg)');
+
+    $('#transportSlice').css('transform', 'rotate(' + transportSlicePosition + 'deg)');
+    $('#transportSlice .pie-slice').css('transform', 'rotate(' + transportSlice + 'deg)');
+    $('#transportSlice .slice-label').html('<h4>$' + transportTotal + '</h4>');
+    $('#transportSlice .slice-label').css('transform', 'rotate(' + transportLabelPosition + 'deg)');
+    $('#transportSlice h4').css('transform', 'rotate(-' + (transportLabelPosition + transportSlicePosition) + 'deg)');
+
+    $('#leisureSlice').css('transform', 'rotate(' + leisureSlicePosition + 'deg)');
+    $('#leisureSlice .pie-slice').css('transform', 'rotate(' + leisureSlice + 'deg)');
+    $('#leisureSlice .slice-label').html('<h4>$' + leisureTotal + '</h4>');
+    $('#leisureSlice .slice-label').css('transform', 'rotate(' + leisureLabelPosition + 'deg)');
+    $('#leisureSlice h4').css('transform', 'rotate(-' + (leisureLabelPosition + leisureSlicePosition) + 'deg)');
 
   });
 
@@ -67,8 +143,8 @@ $(document).ready(function() {
     $('#inputs').addClass('on');
     var income = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       incomeTotal = 0,
-      livingexpenses = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      livingexpensesTotal = 0,
+      livingExpenses = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      livingExpensesTotal = 0,
       insurance = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       insuranceTotal = 0,
       loans = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -77,6 +153,7 @@ $(document).ready(function() {
       transportTotal = 0,
       leisure = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       leisureTotal = 0;
+    console.log(incomeTotal);
   });
 
   $('#calculator #income .income').find('input, select').on('keyup change', function() {
@@ -130,81 +207,81 @@ $(document).ready(function() {
 
   //LIVING EXPENSES TAB//
 
-  $('#calculator #livingexpenses .rent').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .rent').find('input, select').on('keyup change', function() {
     var amount = Number($('.rent .field-input input').val());
     var frequency = Number($('.rent .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[0] = annual;
+    livingExpenses[0] = annual;
   });
 
-  $('#calculator #livingexpenses .rates').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .rates').find('input, select').on('keyup change', function() {
     var amount = Number($('.rates .field-input input').val());
     var frequency = Number($('.rates .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[1] = annual;
+    livingExpenses[1] = annual;
   });
 
-  $('#calculator #livingexpenses .utilities').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .utilities').find('input, select').on('keyup change', function() {
     var amount = Number($('.utilities .field-input input').val());
     var frequency = Number($('.utilities .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[2] = annual;
+    livingExpenses[2] = annual;
   });
 
-  $('#calculator #livingexpenses .phone').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .phone').find('input, select').on('keyup change', function() {
     var amount = Number($('.phone .field-input input').val());
     var frequency = Number($('.phone .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[3] = annual;
+    livingExpenses[3] = annual;
   });
 
-  $('#calculator #livingexpenses .home').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .home').find('input, select').on('keyup change', function() {
     var amount = Number($('.home .field-input input').val());
     var frequency = Number($('.home .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[4] = annual;
+    livingExpenses[4] = annual;
   });
 
-  $('#calculator #livingexpenses .groceries').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .groceries').find('input, select').on('keyup change', function() {
     var amount = Number($('.groceries .field-input input').val());
     var frequency = Number($('.groceries .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[5] = annual;
+    livingExpenses[5] = annual;
   });
 
-  $('#calculator #livingexpenses .medical').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .medical').find('input, select').on('keyup change', function() {
     var amount = Number($('.medical .field-input input').val());
     var frequency = Number($('.medical .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[6] = annual;
+    livingExpenses[6] = annual;
   });
 
-  $('#calculator #livingexpenses .clothes').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .clothes').find('input, select').on('keyup change', function() {
     var amount = Number($('.clothes .field-input input').val());
     var frequency = Number($('.clothes .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[7] = annual;
+    livingExpenses[7] = annual;
   });
 
-  $('#calculator #livingexpenses .education').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .education').find('input, select').on('keyup change', function() {
     var amount = Number($('.education .field-input input').val());
     var frequency = Number($('.education .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[8] = annual;
+    livingExpenses[8] = annual;
   });
 
-  $('#calculator #livingexpenses .other1').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .other1').find('input, select').on('keyup change', function() {
     var amount = Number($('.other1 .field-input input').val());
     var frequency = Number($('.other1 .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[9] = annual;
+    livingExpenses[9] = annual;
   });
 
-  $('#calculator #livingexpenses .other2').find('input, select').on('keyup change', function() {
+  $('#calculator #livingExpenses .other2').find('input, select').on('keyup change', function() {
     var amount = Number($('.other2 .field-input input').val());
     var frequency = Number($('.other2 .field-select option:selected').val());
     var annual = (amount * frequency);
-    livingexpenses[10] = annual;
+    livingExpenses[10] = annual;
   });
 
   //INSURANCE AND SUPERANNUATION//
@@ -375,4 +452,4 @@ $(document).ready(function() {
     var annual = (amount * frequency);
     leisure[6] = annual;
   });
-});;
+});

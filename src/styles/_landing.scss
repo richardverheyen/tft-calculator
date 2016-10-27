@@ -1,17 +1,21 @@
 #landing {
   section {
     #calculator {
-      // div {
-      //   display: none;
-      // }
+      display: flex;
+      width: 410px;
+      height: 1020px;
+
       .on {
-        display: block;
+        display: flex;
+        flex-direction: column;
       }
+
       > div {
         display: none;
         border: #6cc8c6 solid 10px;
         max-width: 400px;
         margin: 0 auto;
+
         h2 {
           background: white;
           text-transform: uppercase;
@@ -19,11 +23,14 @@
           text-align: center;
           padding: 35px 0 10px;
         }
+
         ul {
           padding: 0;
           background: #6cc8c6;
+
           li {
             list-style: none;
+
             h3 {
               color: white;
               background: #6cc8c6;
@@ -34,21 +41,30 @@
               text-transform: uppercase;
               letter-spacing: 0.5px;
             }
+
             table {
-              display: none;
+              display: block;
               background: white;
+              overflow: scroll;
+              height: 0;
+              transition: all 400ms ease-in;
+
               td {
                 padding: 5px 10px;
+                width: 110px;
+
                 label {
                   font-size: 14px;
                   font-weight: 200;
                 }
+
                 input {
                   height: 30px;
                   width: 105px;
                   border: none;
                   background: #EFEFEF;
                 }
+
                 select {
                   background: #EFEFEF;
                   height: 30px;
@@ -58,6 +74,7 @@
                   font-weight: 300;
                 }
               }
+
               .label {
                 label {
                   font-size: 14;
@@ -65,84 +82,229 @@
                 }
               }
             }
+
             &.active {
               table {
-                display: block;
+                height: 500px;
               }
             }
           }
         }
+
         button {
           display: block;
           background: #6cc8c6;
-          margin: 30px auto;
-          border: 1px #6cc8c6 solid;
+          width: 220px;
+          height: 46px;
           font-size: 14px;
           font-weight: 200;
           text-transform: uppercase;
           color: white;
+          margin: auto auto 30px;
+          border: 1px #6cc8c6 solid;
           padding: 10px 30px;
         }
       }
+
       #results {
+        flex-direction: column;
         border: #EFEFEF solid 10px;
         background: #EFEFEF;
+        width: 410px;
+        height: 1000px;
+
         div {
           h2 {
             background: #EFEFEF;
           }
+
           .bar-chart {
             div {
               display: flex;
               margin: 5px 10px;
+
               h3 {
                 width: 100px;
               }
+
               div {
                 display: inline-block;
                 height: 50px;
                 transition: all 400ms ease-out;
               }
+
               .incomeBar {
                 width: 0;
-                background: blue;
+                background: #6cc8c6;
               }
+
               .spendingBar {
                 width: 0;
-                background: orange;
+                background: #fdd800;
               }
+
               .netBar {
                 width: 0;
-                background: yellow;
+                background: #f7921e;
               }
             }
           }
         }
+
         div {
           .pie-chart {
-            div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            > div {
               display: flex;
               flex-wrap: wrap;
-              margin: 10px;
+              position: relative;
+              height: 330px;
+              //pie slice rules
+              .pie {
+                position: absolute;
+                width: 150px;
+                height: 300px;
+                overflow: hidden;
+                left: 0;
+                transform-origin: left center;
+              }
+
+              .big {
+                width: 300px;
+                height: 300px;
+                left: -150px;
+                transform-origin: center center;
+              }
+
+              .pie > .pie-slice {
+                content: "";
+                position: absolute;
+                width: 150px;
+                height: 300px;
+                left: -150px;
+                border-radius: 150px 0 0 150px;
+                transform-origin: right center;
+              }
+
+              .big > .pie-slice {
+                left: 0;
+              }
+
+              .big > span {
+                content: "";
+                position: absolute;
+                width: 150px;
+                height: 300px;
+                left: 150px;
+                border-radius: 0 150px 150px 0;
+                transform-origin: left center;
+              }
+
+              .big > .slice-label {
+                transform-origin: left center;
+                left: 150px;
+              }
+
+              .pie .slice-label {
+                position: absolute;
+                width: 150px;
+                height: 300px;
+                border-radius: 150px 0 0 150px;
+                transform-origin: left center;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                h4 {}
+              }
+              //add colour to pie slices
+              .pie:nth-of-type(1) > .pie-slice,
+              .pie:nth-of-type(1) > span {
+                background-color: #fdd800;
+              }
+
+              .pie:nth-of-type(2) > .pie-slice,
+              .pie:nth-of-type(2) > span {
+                background-color: #6cc8c6;
+              }
+
+              .pie:nth-of-type(3) > .pie-slice,
+              .pie:nth-of-type(3) > span {
+                background-color: #f7921e;
+              }
+
+              .pie:nth-of-type(4) > .pie-slice,
+              .pie:nth-of-type(4) > span {
+                background-color: #d181b6;
+              }
+
+              .pie:nth-of-type(5) > .pie-slice,
+              .pie:nth-of-type(5) > span {
+                background-color: #9ccb3b;
+              }
+
               p {
                 width: 50%;
               }
-              &:nth-last-child(2) {
-                width: 100%;
-                height: 200px;
+            }
+            //pie key section
+            #pie-key {
+              display: flex;
+              flex-wrap: wrap;
+              position: relative;
+              height: 20px;
+              margin: 0 20px;
+
+              p {
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+
+                span {
+                  display: inline-block;
+                  width: 22px;
+                  height: 22px;
+                  margin-right: 5px;
+                }
               }
+
+              p:nth-last-child(5) span {
+                background-color: #fdd800;
+              };
+
+              p:nth-last-child(4) span {
+                background-color: #6cc8c6;
+              };
+
+              p:nth-last-child(3) span {
+                background-color: #f7921e;
+              };
+
+              p:nth-last-child(2) span {
+                background-color: #d181b6;
+              };
+
+              p:nth-last-child(1) span {
+                background-color: #9ccb3b;
+              };
             }
           }
         }
+
         button {
           display: block;
           background: #6cc8c6;
-          margin: 30px auto;
-          border: 1px #6cc8c6 solid;
+          width: 220px;
+          height: 46px;
           font-size: 14px;
           font-weight: 200;
           text-transform: uppercase;
           color: white;
+          margin: auto auto 30px;
+          border: 1px #6cc8c6 solid;
           padding: 10px 30px;
         }
       }
