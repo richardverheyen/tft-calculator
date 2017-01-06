@@ -69,14 +69,62 @@ footer div p {
 }
 
 /* Specific to one page */
-#landing section #calculator {
+#income-calculator-wrapper > .container > .row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+#income-calculator-wrapper > .container > .row:after {
+  display: none;
+}
+#income-calculator-wrapper > .container > .row > div {
+  margin: 10px;
+}
+@media (max-width: 850px) {
+  #income-calculator-wrapper > .container > .row {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #income-calculator-wrapper > .container > .row > div {
+    margin: 10px auto;
+  }
+}
+
+@media (min-width: 0px) {
+  #income-calculator-wrapper > .container {
+    width: auto !important;
+  }
+}
+
+#calculator {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 410px;
-  height: 1020px;
+  height: 1075px;
+  padding: 45px 0;
+  margin: 10px;
 }
-#landing section #calculator .on {
+#calculator a,
+#calculator h1,
+#calculator h2,
+#calculator h3,
+#calculator h4,
+#calculator li,
+#calculator p {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+}
+#calculator .on {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -84,73 +132,179 @@ footer div p {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-#landing section #calculator > div {
+#calculator > div {
   display: none;
   border: #6cc8c6 solid 10px;
   max-width: 400px;
   margin: 0 auto;
 }
-#landing section #calculator > div h2 {
+#calculator > div h2 {
   background: white;
   text-transform: uppercase;
-  font-weight: 200;
   text-align: center;
-  padding: 35px 0 10px;
+  padding: 22px 0 2px;
+  margin-bottom: 0;
+  font-weight: 300 !important;
+  font-size: 23px;
+  line-height: 1.5;
 }
-#landing section #calculator > div ul {
+#calculator > div ul {
   padding: 0;
   background: #6cc8c6;
 }
-#landing section #calculator > div ul li {
+#calculator > div ul li {
   list-style: none;
 }
-#landing section #calculator > div ul li h3 {
+#calculator > div ul li h3 {
   color: white;
+  position: relative;
   background: #6cc8c6;
   margin: 0;
   padding: 12px 30px;
   font-weight: 200;
   font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
-#landing section #calculator > div ul li table {
+#calculator > div ul li h3:hover {
+  background-color: #47bab8;
+}
+#calculator > div ul li h3:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 23px;
+  height: 25px;
+  width: 20px;
+  background-image: url("http://www.thefinancialtherapist.com.au/wp-content/uploads/2017/01/upper.svg");
+  background-repeat: no-repeat;
+  padding-left: 6px;
+  background-size: 70%;
+  background-position: center;
+}
+#calculator > div ul li table {
   display: block;
   background: white;
   overflow: scroll;
   height: 0;
+  width: 395px;
   transition: all 400ms ease-in;
 }
-#landing section #calculator > div ul li table td {
-  padding: 5px 10px;
-  width: 110px;
+#calculator > div ul li table tbody {
+  display: block;
+  padding-top: 10px;
 }
-#landing section #calculator > div ul li table td label {
-  font-size: 14px;
-  font-weight: 200;
+#calculator > div ul li table tbody tr {
+  height: 35px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 15px;
 }
-#landing section #calculator > div ul li table td input {
-  height: 30px;
+#calculator > div ul li table tbody tr td {
+  padding: 0 5px;
+}
+#calculator > div ul li table tbody tr td .field-title {
   width: 105px;
-  border: none;
-  background: #EFEFEF;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-#landing section #calculator > div ul li table td select {
-  background: #EFEFEF;
-  height: 30px;
+#calculator > div ul li table tbody tr td .field-title label {
   width: 105px;
-  border: none;
   text-transform: uppercase;
   font-weight: 300;
+  display: block;
+  font-size: 12px;
+  line-height: 120%;
 }
-#landing section #calculator > div ul li table .label label {
-  font-size: 14;
+#calculator > div ul li table tbody tr td .field-input {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  direction: rtl;
+  height: 25px;
+  width: 100px;
+  border: none;
+  padding: 0;
+  background: #EFEFEF;
+}
+#calculator > div ul li table tbody tr td .field-input input {
+  height: 25px;
+  width: 100px;
+  text-align: left;
+  border: none;
+  padding: 0 0 0 5px;
+  background: #EFEFEF;
+  direction: ltr;
+  font-size: 12px;
+}
+#calculator > div ul li table tbody tr td .field-input input:focus {
+  outline: none;
+  background-color: #d6d6d6;
+}
+#calculator > div ul li table tbody tr td .field-select {
+  position: relative;
+  background-color: #EFEFEF;
+  height: 25px;
+  width: 125px;
+}
+#calculator > div ul li table tbody tr td .field-select:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 20px;
+  background-image: url("http://www.thefinancialtherapist.com.au/wp-content/uploads/2017/01/downer.svg");
+  background-repeat: no-repeat;
+  border-left: #999999 solid 1px;
+  padding-left: 6px;
+  background-size: 70%;
+  background-position: center;
+}
+#calculator > div ul li table tbody tr td .field-select select {
+  position: absolute;
+  right: 0;
+  background: transparent;
+  height: 25px;
+  width: 125px;
+  border: none;
   text-transform: uppercase;
+  font-weight: 200;
+  font-size: 12px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding-left: 5px;
+  letter-spacing: 0.5px;
 }
-#landing section #calculator > div ul li.active table {
+#calculator > div ul li table tbody tr td .field-select select:focus {
+  outline: none;
+}
+#calculator > div ul li table tbody .label td label {
+  display: block;
+  text-transform: uppercase;
+  width: 100px;
+}
+#calculator > div ul li table tbody .label td:nth-child(1) {
+  width: 115px;
+}
+#calculator > div ul li.active table {
   height: 500px;
 }
-#landing section #calculator > div button {
+#calculator > div button {
   display: block;
   background: #6cc8c6;
   width: 220px;
@@ -162,8 +316,12 @@ footer div p {
   margin: auto auto 30px;
   border: 1px #6cc8c6 solid;
   padding: 10px 30px;
+  cursor: pointer;
 }
-#landing section #calculator #results {
+#calculator > div button:hover {
+  background-color: #47bab8;
+}
+#calculator #results {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -172,36 +330,52 @@ footer div p {
   width: 410px;
   height: 1000px;
 }
-#landing section #calculator #results div h2 {
+#calculator #results div h2 {
   background: #EFEFEF;
 }
-#landing section #calculator #results div .bar-chart div {
+#calculator #results div .bar-chart div {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 5px 10px;
 }
-#landing section #calculator #results div .bar-chart div h3 {
+#calculator #results div .bar-chart div h3 {
+  font-size: 16px;
+  font-weight: 300;
   width: 100px;
+  text-transform: uppercase;
 }
-#landing section #calculator #results div .bar-chart div div {
+#calculator #results div .bar-chart div h4 {
+  font-weight: 300;
+  margin-left: 10px;
+}
+#calculator #results div .bar-chart div h4.income {
+  color: #6cc8c6;
+}
+#calculator #results div .bar-chart div h4.spending {
+  color: #f7921e;
+}
+#calculator #results div .bar-chart div h4.net {
+  color: #d181b6;
+}
+#calculator #results div .bar-chart div .bar {
   display: inline-block;
   height: 50px;
-  transition: all 400ms ease-out;
+  transition: all 500ms ease-out;
 }
-#landing section #calculator #results div .bar-chart div .incomeBar {
+#calculator #results div .bar-chart div .bar.income {
   width: 0;
   background: #6cc8c6;
 }
-#landing section #calculator #results div .bar-chart div .spendingBar {
-  width: 0;
-  background: #fdd800;
-}
-#landing section #calculator #results div .bar-chart div .netBar {
+#calculator #results div .bar-chart div .bar.spending {
   width: 0;
   background: #f7921e;
 }
-#landing section #calculator #results div .pie-chart {
+#calculator #results div .bar-chart div .bar.net {
+  width: 0;
+  background: #d181b6;
+}
+#calculator #results div #pie-chart {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -211,8 +385,9 @@ footer div p {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 75px;
 }
-#landing section #calculator #results div .pie-chart > div {
+#calculator #results div #pie-chart > div {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -220,57 +395,77 @@ footer div p {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   position: relative;
-  height: 330px;
+  height: 340px;
 }
-#landing section #calculator #results div .pie-chart > div .pie {
+#calculator #results div #pie-chart > div .pie {
   position: absolute;
-  width: 150px;
-  height: 300px;
+  width: 140px;
+  height: 280px;
   overflow: hidden;
   left: 0;
   -webkit-transform-origin: left center;
           transform-origin: left center;
 }
-#landing section #calculator #results div .pie-chart > div .big {
-  width: 300px;
-  height: 300px;
-  left: -150px;
+#calculator #results div #pie-chart > div .pie.big {
+  width: 280px;
+  height: 280px;
+  left: -140px;
   -webkit-transform-origin: center center;
           transform-origin: center center;
 }
-#landing section #calculator #results div .pie-chart > div .pie > .pie-slice {
-  content: "";
+#calculator #results div #pie-chart > div .pie.big .slice {
+  left: 0;
+}
+#calculator #results div #pie-chart > div .pie.big .label {
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  left: 140px;
+}
+#calculator #results div #pie-chart > div .pie.big span {
+  content: '';
   position: absolute;
-  width: 150px;
-  height: 300px;
-  left: -150px;
-  border-radius: 150px 0 0 150px;
+  width: 140px;
+  height: 280px;
+  left: 140px;
+  border-radius: 0 140px 140px 0;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+#calculator #results div #pie-chart > div .pie:nth-of-type(1) .slice,
+#calculator #results div #pie-chart > div .pie:nth-of-type(1) span {
+  background-color: #fdd800;
+}
+#calculator #results div #pie-chart > div .pie:nth-of-type(2) .slice,
+#calculator #results div #pie-chart > div .pie:nth-of-type(2) span {
+  background-color: #6cc8c6;
+}
+#calculator #results div #pie-chart > div .pie:nth-of-type(3) .slice,
+#calculator #results div #pie-chart > div .pie:nth-of-type(3) span {
+  background-color: #f7921e;
+}
+#calculator #results div #pie-chart > div .pie:nth-of-type(4) .slice,
+#calculator #results div #pie-chart > div .pie:nth-of-type(4) span {
+  background-color: #d181b6;
+}
+#calculator #results div #pie-chart > div .pie:nth-of-type(5) .slice,
+#calculator #results div #pie-chart > div .pie:nth-of-type(5) span {
+  background-color: #9ccb3b;
+}
+#calculator #results div #pie-chart > div .pie .slice {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 280px;
+  left: -140px;
+  border-radius: 140px 0 0 140px;
   -webkit-transform-origin: right center;
           transform-origin: right center;
 }
-#landing section #calculator #results div .pie-chart > div .big > .pie-slice {
-  left: 0;
-}
-#landing section #calculator #results div .pie-chart > div .big > span {
-  content: "";
+#calculator #results div #pie-chart > div .pie .label {
   position: absolute;
-  width: 150px;
-  height: 300px;
-  left: 150px;
-  border-radius: 0 150px 150px 0;
-  -webkit-transform-origin: left center;
-          transform-origin: left center;
-}
-#landing section #calculator #results div .pie-chart > div .big > .slice-label {
-  -webkit-transform-origin: left center;
-          transform-origin: left center;
-  left: 150px;
-}
-#landing section #calculator #results div .pie-chart > div .pie .slice-label {
-  position: absolute;
-  width: 150px;
-  height: 300px;
-  border-radius: 150px 0 0 150px;
+  width: 140px;
+  height: 280px;
+  border-radius: 140px 0 0 140px;
   -webkit-transform-origin: left center;
           transform-origin: left center;
   display: -webkit-flex;
@@ -283,30 +478,10 @@ footer div p {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(1) > .pie-slice,
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(1) > span {
-  background-color: #fdd800;
-}
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(2) > .pie-slice,
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(2) > span {
-  background-color: #6cc8c6;
-}
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(3) > .pie-slice,
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(3) > span {
-  background-color: #f7921e;
-}
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(4) > .pie-slice,
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(4) > span {
-  background-color: #d181b6;
-}
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(5) > .pie-slice,
-#landing section #calculator #results div .pie-chart > div .pie:nth-of-type(5) > span {
-  background-color: #9ccb3b;
-}
-#landing section #calculator #results div .pie-chart > div p {
+#calculator #results div #pie-chart > div p {
   width: 50%;
 }
-#landing section #calculator #results div .pie-chart #pie-key {
+#calculator #results div #pie-chart #pie-key {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +492,7 @@ footer div p {
   height: 20px;
   margin: 0 20px;
 }
-#landing section #calculator #results div .pie-chart #pie-key p {
+#calculator #results div #pie-chart #pie-key p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -325,29 +500,33 @@ footer div p {
       -ms-flex-align: center;
           align-items: center;
   font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-#landing section #calculator #results div .pie-chart #pie-key p span {
+#calculator #results div #pie-chart #pie-key p span {
   display: inline-block;
   width: 22px;
   height: 22px;
   margin-right: 5px;
 }
-#landing section #calculator #results div .pie-chart #pie-key p:nth-last-child(5) span {
+#calculator #results div #pie-chart #pie-key p:nth-last-child(5) span {
   background-color: #fdd800;
 }
-#landing section #calculator #results div .pie-chart #pie-key p:nth-last-child(4) span {
+#calculator #results div #pie-chart #pie-key p:nth-last-child(4) span {
   background-color: #6cc8c6;
 }
-#landing section #calculator #results div .pie-chart #pie-key p:nth-last-child(3) span {
+#calculator #results div #pie-chart #pie-key p:nth-last-child(3) span {
   background-color: #f7921e;
 }
-#landing section #calculator #results div .pie-chart #pie-key p:nth-last-child(2) span {
+#calculator #results div #pie-chart #pie-key p:nth-last-child(2) span {
   background-color: #d181b6;
 }
-#landing section #calculator #results div .pie-chart #pie-key p:nth-last-child(1) span {
+#calculator #results div #pie-chart #pie-key p:nth-last-child(1) span {
   background-color: #9ccb3b;
 }
-#landing section #calculator #results button {
+#calculator #results button {
   display: block;
   background: #6cc8c6;
   width: 220px;
@@ -359,6 +538,10 @@ footer div p {
   margin: auto auto 30px;
   border: 1px #6cc8c6 solid;
   padding: 10px 30px;
+  cursor: pointer;
+}
+#calculator #results button:hover {
+  background-color: #47bab8;
 }
 
 /* Outdate Browsers*/
